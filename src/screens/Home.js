@@ -1,7 +1,8 @@
 import React from "react";
 import { Image, ImageBackground, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
+import CourseList from "./CourseList";
 
-const Home = () =>{
+const Home = ({navigation}) =>{
     return(
         <ImageBackground
         source={require('../images/Home.png')}
@@ -77,7 +78,7 @@ const Home = () =>{
                                Start learning new Staff
                            </Text>
                            <TouchableOpacity
-                                // onPress={()=>this.props.navigation.navigate('Cources')}
+                                onPress={()=>navigation.navigate('Cources')}
                                 style={{
                                     flexDirection:"row",
                                     backgroundColor:"#f58084",
@@ -113,6 +114,21 @@ const Home = () =>{
                        marginTop:20,
                        marginBottom:10
                    }}>Courses in progress</Text>
+                   <CourseList
+                        img={require('../images/xd.png')}
+                        title="Adobe XD Prototyping"
+                        bg="#fdddf3"
+                   />
+                    <CourseList
+                        img={require('../images/sketch.png')}
+                        title="Sketch shortcuts and tricks"
+                        bg="#fef8e3"
+                   />
+                    <CourseList
+                        img={require('../images/ae.png')}
+                        title="UI Motion Design in After Effects"
+                        bg="#fcf2ff"
+                   />
            </ScrollView>
         </ImageBackground>
     )
